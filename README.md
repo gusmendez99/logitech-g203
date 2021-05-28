@@ -1,6 +1,9 @@
 # Logitech G203 Prodigy - Driver
 Driver Project - OS extras
 
+## Demo
+![demo](https://github.com/gusmendez99/logitech-g203/raw/main/images/demo.gif?raw=true)
+
 ## Requirements
 
 - Python 3.8+
