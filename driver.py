@@ -4,13 +4,7 @@ import usb.core
 import usb.util
 import re
 import binascii
-from settings import (
-    VENDOR_ID,
-    DEFAULT_BRIGHTNESS,
-    DEFAULT_RATE, 
-    PRODIGY_PID,
-    PID
-)
+from settings import VENDOR_ID, DEFAULT_BRIGHTNESS, DEFAULT_RATE, PRODIGY_PID, PID
 
 my_device = None
 w_index = None
@@ -135,7 +129,6 @@ def set_dpi(dpi):
     send_command(cmd, disable_ls_onboard_memory=False)
 
 
-
 def clear_ls_buffer():
     try:
         while True:
@@ -147,9 +140,7 @@ def clear_ls_buffer():
 def send_command(data, disable_ls_onboard_memory=False, clear_ls_buf=False):
     attach_mouse()
 
-    if (
-        clear_ls_buf
-    ):
+    if clear_ls_buf:
         clear_ls_buffer()
 
     if disable_ls_onboard_memory:
@@ -172,9 +163,7 @@ def send_command(data, disable_ls_onboard_memory=False, clear_ls_buf=False):
         )
         my_device.read(0x82, 20)
 
-    if (
-        clear_ls_buf
-    ):
+    if clear_ls_buf:
         clear_ls_buffer()
 
     detach_mouse()
